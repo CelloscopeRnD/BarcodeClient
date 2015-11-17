@@ -12,11 +12,15 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     public static final String BARCODE_READER_CLASS_NAME = "co.celloscope.barcodereader.MainActivity";
-    public static final String BARCODE_READER_PACKEAGE_NAME = "co.celloscope.barcodereader";
+    public static final String BARCODE_READER_PACKAGE_NAME = "co.celloscope.barcodereader";
     public static final int REQUEST_CODE_READ_BARCODE = 1;
     public static final String NAME = "NAME";
     private static final String PIN = "PIN";
     private static final String DOB = "DOB";
+    private static final String BARCODE_TYPE = "BarcodeType";
+    private static final String PDF417 = "PDF417";
+    private static final String BARCODE_CONTENT = "BarcodeContent";
+    private static final String NID = "NID";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setComponent(new ComponentName(BARCODE_READER_PACKEAGE_NAME, BARCODE_READER_CLASS_NAME));
+                intent.putExtra(BARCODE_TYPE, PDF417);
+                intent.putExtra(BARCODE_CONTENT, NID);
+                intent.setComponent(new ComponentName(BARCODE_READER_PACKAGE_NAME, BARCODE_READER_CLASS_NAME));
                 startActivityForResult(intent, REQUEST_CODE_READ_BARCODE);
             }
         });
@@ -37,10 +43,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_CODE_READ_BARCODE) {
             if (resultCode == RESULT_OK) {
-                Toast.makeText(MainActivity.this, new StringBuilder(data.getStringExtra(NAME))
-                        .append(data.getStringExtra(PIN))
-                        .append(data.getStringExtra(DOB))
-                        .toString(), Toast.LENGTH_LONG).show();
                 new AlertDialog.Builder(this)
                         .setMessage(new StringBuilder("Name: ")
                                 .append(data.getStringExtra(NAME))
