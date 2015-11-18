@@ -11,18 +11,20 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"    android:orientation="vertical">
 
-    <Button
+    <ImageButton
         android:id="@+id/readBarcodeButton"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@null"
         android:layout_weight="1"
-        android:text="Read Barcode" />
+        android:src="@drawable/pdf417"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/readQRCodeButton"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="Read QRCode"
+        android:src="@drawable/qr"
+        android:background="@null"
         android:layout_below="@+id/readBarcodeButton"/>
 </LinearLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BarcodeClient</string>
+    <string name="app_name">Barcode Client</string>
     <string name="action_settings">Settings</string>
     <string name="noResultFound">No result found</string>
 </resources>
