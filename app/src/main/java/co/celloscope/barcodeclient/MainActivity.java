@@ -68,12 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 new AlertDialog.Builder(this)
                         .setMessage(message)
                         .setCancelable(false)
-                        .setNeutralButton("OK", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        }).show();
+                        .setNeutralButton("OK", null).show();
             } else {
                 Toast.makeText(MainActivity.this, R.string.noResultFound, Toast.LENGTH_LONG).show();
             }
