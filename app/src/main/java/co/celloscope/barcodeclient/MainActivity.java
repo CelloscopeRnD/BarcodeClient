@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String BARCODE_READER_CLASS_NAME = "co.celloscope.barcodereader.MainActivity";
+    private static final String BARCODE_READER_CLASS_NAME = "co.celloscope.barcodereader.CameraActivity";
     private static final String BARCODE_READER_PACKAGE_NAME = "co.celloscope.barcodereader";
     private static final int REQUEST_CODE_READ_BARCODE = 1;
     private static final String NAME = "NAME";
